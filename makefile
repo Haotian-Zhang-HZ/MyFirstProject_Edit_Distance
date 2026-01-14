@@ -13,13 +13,13 @@ OBJ = $(SRC:.cpp=.o) $(TEST:.cpp=.o)
 all : main test
 
 src/edit_distance.o: src/edit_distance.cpp 
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $^ -o src/edit_distance.o
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $^ -o $@
 
 test/edit_distance_test.o: $(TEST) 
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $^ -o test/edit_distance_test.o
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $^ -o $@
 
 main: main.cpp src/edit_distance.o
-	$(CXX) $(CXXFLAGS) $(INCLUDES) $^ -o main
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $^ -o $@
 
 test: test/edit_distance_test.o src/edit_distance.o
 	$(CXX) $(CXXFLAGS) $(INCLUDES) $(LDFLAGS) $^  $(LIBS) -o test_runner
