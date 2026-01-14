@@ -45,4 +45,5 @@ coverage_html: src/edit_distance.o
 
 clean:
 	rm -f main test_runner src/*.o test/*.o src/*.gcno src/*.gcda *.gcov
-
+	rm -f coverage.info coverage.info.cleaned
+	rm -rf coverage_html
