@@ -16,3 +16,15 @@ TEST(EditDistanceTest, Delete) {
 TEST(EditDistanceTest, Replace) {
     EXPECT_EQ(edit_distance("cat", "cut"), 1);
 }
+
+TEST(EditDistanceTest, EmptyString) {
+    EXPECT_EQ(edit_distance("", "abc"), 3);
+}
+
+TEST(EditDistanceTest, InsertOneChar) {
+    EXPECT_EQ(edit_distance("cat", "cats"), 1);
+}
+
+TEST(EditDistanceTest, ReplaceChar) {
+    EXPECT_EQ(edit_distance("cat", "cut"), 1);
+}
